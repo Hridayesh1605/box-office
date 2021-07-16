@@ -6,6 +6,9 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "no-console": "off",
+    // or equivalent
+    // "no-console": [0]
     "no-plusplus": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": [0],
