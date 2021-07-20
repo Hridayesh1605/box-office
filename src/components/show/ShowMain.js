@@ -1,4 +1,5 @@
 import React from 'react';
+
 import IMG_PLACEHOLDER from '../../images/not-found.png';
 import { Star } from '../styled';
 import { MainDataWrapper, Headline, TagList } from './ShowMainData.styled';
@@ -11,7 +12,7 @@ const ShowMain = ({ name, rating, summary, tags, image }) => {
         <Headline>
           <h1>{name}</h1>
           <div>
-            <Star />
+            <Star active />
             <span>{rating.average || 'N/A'}</span>
           </div>
         </Headline>
@@ -32,5 +33,4 @@ const ShowMain = ({ name, rating, summary, tags, image }) => {
     </MainDataWrapper>
   );
 };
-
 export default ShowMain;
