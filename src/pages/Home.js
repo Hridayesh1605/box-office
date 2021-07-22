@@ -62,11 +62,6 @@ const Home = () => {
           value={input}
           onKeyDown={onKeyDown}
         />
-        <SearchButtonWrapper>
-          <button type="button" onClick={onSearch}>
-            Search
-          </button>
-        </SearchButtonWrapper>
 
         <RadioInputsWrapper>
           <div>
@@ -87,8 +82,13 @@ const Home = () => {
               onChange={onRadioChange}
             />
           </div>
-          {renderResults()}
         </RadioInputsWrapper>
+        <SearchButtonWrapper>
+          <button type="button" onClick={onSearch}>
+            Search
+          </button>
+        </SearchButtonWrapper>
+        {renderResults()}
       </MainPageLayout>
     </div>
   );
