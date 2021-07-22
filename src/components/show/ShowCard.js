@@ -12,7 +12,9 @@ const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
   return (
     <StyledShowCard>
       <div className="img-wrapper">
-        <img src={image} alt="show" />
+        <Link to={`/show/${id}`}>
+          <img src={image} alt="show" />
+        </Link>
       </div>
 
       <h1>{name}</h1>
