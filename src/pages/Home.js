@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import ActorGrid from '../components/actor/ActorGrid';
+import CustomRadio from '../components/CustomRadio';
+import {
+  RadioInputsWrapper,
+  SearchButtonWrapper,
+  SearchInput,
+} from '../components/Home.styled';
 import MainPageLayout from '../components/MainPageLayout';
 import ShowGrid from '../components/show/ShowGrid';
 import { apiGet } from '../misc/config';
@@ -49,41 +55,40 @@ const Home = () => {
   return (
     <div>
       <MainPageLayout>
-        <input
+        <SearchInput
           type="text"
           placeholder="Search Something"
           onChange={onInputChange}
           value={input}
           onKeyDown={onKeyDown}
         />
-        <button type="button" onClick={onSearch}>
-          Search
-        </button>
+        <SearchButtonWrapper>
+          <button type="button" onClick={onSearch}>
+            Search
+          </button>
+        </SearchButtonWrapper>
 
-        <div>
-          <label htmlFor="shows-search">
-            shows
-            <input
+        <RadioInputsWrapper>
+          <div>
+            <CustomRadio
+              label="Shows"
               id="shows-search"
-              type="radio"
               value="shows"
               checked={isShowSearch}
               onChange={onRadioChange}
             />
-          </label>
-
-          <label htmlFor="actors-search">
-            Actors
-            <input
+          </div>
+          <div>
+            <CustomRadio
+              label="Shows"
               id="actors-search"
-              type="radio"
               value="people"
               checked={!isShowSearch}
               onChange={onRadioChange}
             />
-          </label>
+          </div>
           {renderResults()}
-        </div>
+        </RadioInputsWrapper>
       </MainPageLayout>
     </div>
   );
